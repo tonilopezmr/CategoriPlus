@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteEjercicioC_subreport" language="groovy" pageWidth="100" pageHeight="802" columnWidth="100" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="a8179b50-e29c-4e84-b7ac-bcda9e693920">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="CATEGORY_ID" class="java.math.BigDecimal"/>
+	<queryString>
+		<![CDATA[SELECT
+     AVG(product_template."list_price") AS media,
+     product_category."id" AS product_category_id
+FROM
+     "public"."product_category" product_category INNER JOIN "public"."product_template" product_template ON product_category."id" = product_template."categ_id"
+WHERE product_category."id" = $P{CATEGORY_ID}
+GROUP BY product_category."id"]]>
+	</queryString>
+	<field name="media" class="java.math.BigDecimal"/>
+	<field name="product_category_id" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" forecolor="#FFFFFF" backcolor="#000000" uuid="d437f863-c8f6-429d-8b37-e3cb93c5974b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{media}.floatValue()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="4" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="2" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
