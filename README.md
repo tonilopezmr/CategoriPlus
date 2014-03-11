@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CategoriPLus+
 =====================
 
@@ -42,3 +43,4 @@ Ayuda
 
 Tiene un sistema de ayuda creado con JavaHelp.
 
+>>>>>>> 6fede34bf8e3fb036d0413b1bc04bf9578f81f10
