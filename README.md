@@ -1,5 +1,5 @@
 
-CategoriPLus+
+CategoriPlus+
 =====================
 
 Creado por Antonio López Marín como trabajo final para Desarrollo de Interfaces.
